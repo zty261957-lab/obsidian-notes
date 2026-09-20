@@ -19,7 +19,13 @@
 
 .dashboard-page .metadata-container,
 .dashboard-page .inline-title {
-  display: none;
+  display: none !important;
+}
+
+/* cssclasses 在编辑视图中可能挂在内容层，使用 :has 同时收起同标签页的属性区。 */
+.workspace-leaf:has(.dashboard-page) .metadata-container,
+.workspace-leaf:has(.dashboard-page) .inline-title {
+  display: none !important;
 }
 
 .dashboard-page,
@@ -65,7 +71,8 @@
   overflow: hidden;
   border: 1px solid rgba(170, 143, 204, 0.22);
   border-radius: 20px;
-  background: #f5f0fb;
+  background-color: #f5f0fb;
+  background-image: linear-gradient(90deg, rgba(249, 246, 252, 0.16), rgba(246, 241, 251, 0.02));
   box-shadow: var(--dashboard-shadow);
   --callout-color: 140, 111, 192;
 }
@@ -98,11 +105,19 @@
 }
 
 .dashboard-page .callout[data-callout="dashboard-hero"] .image-embed {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.dashboard-page .callout[data-callout="dashboard-hero"] .callout-content > p:has(.image-embed) {
   position: absolute;
   inset: 0;
   z-index: 0;
-  width: 100%;
-  height: 100%;
+  max-width: none;
   margin: 0;
 }
 
