@@ -1,5 +1,11 @@
 # xuejian-av-transcribe 安装使用说明（Mac）
 
+
+> ⚠️ **平台适用性提示（2026-09 补）**
+> 本文写于 **Claude Code** 语境：文中路径 `~/.claude/skills/` 与「**触发词**」均为 **Claude Code CLI 专属**。
+> **跨平台通用做法**：把 Skill 放在 **`.agents/skills/<名称>/SKILL.md`**（各平台均识别）；触发**靠 `description` 自动匹配**，不存在「触发词」机制。
+> 若在 **WorkBuddy** 使用：走**技能页 → 导入本地文件/技能包**，无需关心目录路径。
+
 把视频/音频 → 文案，一步到位（SenseVoice 转写 + DeepSeek 自动纠错）。
 
 ## 安装（3 步，2 分钟）

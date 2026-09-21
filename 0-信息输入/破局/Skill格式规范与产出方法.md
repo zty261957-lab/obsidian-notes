@@ -3,6 +3,12 @@
 > 归纳自《12期打卡训练营课件：产品经理AI提效》（26万字）——覆盖第1/2/3/4/5/6/7/8/9/12章的 Skill 教学。
 > 目标读者：要自己写 skill / 拆解课程 skill 结构的产品经理。
 
+
+> ⚠️ **平台适用性提示（2026-09 补）**
+> 本文写于 **Claude Code** 语境：文中路径 `~/.claude/skills/` 与「**触发词**」均为 **Claude Code CLI 专属**。
+> **跨平台通用做法**：把 Skill 放在 **`.agents/skills/<名称>/SKILL.md`**（各平台均识别）；触发**靠 `description` 自动匹配**，不存在「触发词」机制。
+> 若在 **WorkBuddy** 使用：走**技能页 → 导入本地文件/技能包**，无需关心目录路径。
+
 ---
 
 ## 〇、Skill 的本质（贯穿全营的一句话）
@@ -14,13 +20,19 @@
 
 ## 一、Skill 的存放位置（两级）
 
-| 级别 | 路径 | 作用范围 | 典型用途 |
-|------|------|---------|---------|
-| **USER 级** | `~/.claude/skills/<skill名>/SKILL.md` | 当前用户所有项目 | 高频跨项目通用：meeting-minutes / weekly-report / feedback-analysis |
-| **项目级** | `<项目根>/.claude/skills/<skill名>/SKILL.md` | 仅该项目 | 项目专属：saas-prd / team-review-checklist（可进 git 团队共享） |
+| 级别 | 路径（Claude Code） | **跨平台推荐** ⭐ | 作用范围 |
+|------|-------------------|-----------------|---------|
+| **USER 级** | `~/.claude/skills/<skill名>/SKILL.md` | **`~/.agents/skills/<skill名>/SKILL.md`** | 当前用户所有项目 |
+| **项目级** | `<项目根>/.claude/skills/<skill名>/SKILL.md` | **`<项目根>/.agents/skills/<skill名>/SKILL.md`** | 仅该项目（可进 git 共享） |
+
+> ⚠️ **上表第一列是 Claude Code 专属**；**`.agents/skills/` 才是各平台通用目录**（Trae / Qoder CN / CodeBuddy / Kimi / Claude Code 均识别）。
+> **WorkBuddy**：不用管路径，走**技能页 → 导入本地文件/技能包**。
+
+**其他平台路径**：Trae `.trae/skills/`｜Qoder CN `~/.lingma/skills/`｜CodeBuddy `.codebuddy/skills/`｜ZCode `~/.zcode/skills/`
 
 - **优先级**：项目级覆盖 USER 级同名 Skill
 - **口诀**：USER 级管通用，项目级管专属
+
 
 ---
 
@@ -43,8 +55,8 @@ description: <一句话说清"做什么+何时用"，含触发关键词提升命
 
 # Skill：<skill名称>
 
-## 触发词
-/<skill-name>               # 用户输入即触发
+## 触发词（⚠️ 仅 Claude Code CLI 适用）
+/<skill-name>               # 用户输入即触发（其他平台无此机制，靠 description 自动匹配）
 
 ## 一句话描述
 {做什么 + 产出长什么样}      # 给 AI 执行时读（比 frontmatter 简）
