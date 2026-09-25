@@ -1,8 +1,10 @@
 ---
 task_id: CONTENT-001
+work_item: true
 type: 内容生产任务
-status: 待梳理
+status: 进行中
 current_step: 原始素材已收集
+next_action: 梳理最终选题、结构和主题思想
 source_type: 文字口述
 working_topic: 为什么我要搭建自己的 Agent
 target_platforms: []
