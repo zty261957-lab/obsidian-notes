@@ -1,6 +1,7 @@
 ---
 title: Agent 失败归因图（五类归因 + Trace 骨架）
 source: https://mp.weixin.qq.com/s/Qu3YoRdKrglJ5RGygEoA2A
+alternate_source: https://mp.weixin.qq.com/s/Z1T-60Hq8yK7MBZIG_R9qg
 author: 子期
 tags: [Agent可观测性, 失败归因, Trace, 质量周报]
 ---
